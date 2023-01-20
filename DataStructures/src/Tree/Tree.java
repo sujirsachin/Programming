@@ -54,26 +54,33 @@ public class Tree {
         }
     }
 
-//    public boolean find(int value)
-//    {
-//        if(root == null)
-//        {
-//            return false;
-//        }
-//        if(root.value == value)
-//        {
-//            return true;
-//        }
-//        var currentNode = root;
-//        while (true)
-//        {
-//            if(value < currentNode.value)
-//            {
-//
-//            }
-//        }
-//        return false;
-//    }
+    public boolean find(int value)
+    {
+        if(root == null)
+        {
+            return false;
+        }
+        if(root.value == value)
+        {
+            return true;
+        }
+        var currentNode = root;
+        while (currentNode != null)
+        {
+            if(value < currentNode.value)
+            {
+                currentNode = currentNode.leftChild;
+            }
+            else if(value > currentNode.value)
+            {
+                currentNode = currentNode.rightChild;
+            }
+            else
+                return true;
+        }
+
+        return false;
+    }
 
     @Override
     public String toString() {
